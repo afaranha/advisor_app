@@ -1,0 +1,16 @@
+{{ block title }}
+    Page title
+{{ endblock }}
+{{ block content }}
+
+    {{ group.advisor }} sent you an offer:
+    {{ formfields }}
+    {{ next_button }}
+
+    <div>
+    {{ for item in group.in_previous_rounds() }}
+        <p>Round #{{ item.round_number }}: {{ item.sent_offer }} offer from {{ item.advisor }}.</p>
+    {{ endfor }}
+    </div>
+
+{{ endblock }}
